@@ -1,5 +1,5 @@
 <?php
-class TrueAction_ActiveConfig_Model_Observer
+class EbayEnterprise_ActiveConfig_Model_Observer
 {
 	const IMPORT_SPEC_PATH = 'fields/activeconfig_import';
 

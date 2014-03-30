@@ -1,8 +1,8 @@
 <config>
     <modules>
-        <TrueAction_ActiveConfig>
+        <EbayEnterprise_ActiveConfig>
             <active>true</active>
             <codePool>community</codePool>
-        </TrueAction_ActiveConfig>
+        </EbayEnterprise_ActiveConfig>
     </modules>
 </config>

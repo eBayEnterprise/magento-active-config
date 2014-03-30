@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <config>
 	<modules>
-		<TrueAction_ActiveConfig>
+		<EbayEnterprise_ActiveConfig>
 			<version>0.1.0</version>
-		</TrueAction_ActiveConfig>
+		</EbayEnterprise_ActiveConfig>
 	</modules>
 	<global>
 		<blocks>
 			<activeconfig>
-				<class>TrueAction_ActiveConfig_Block</class>
+				<class>EbayEnterprise_ActiveConfig_Block</class>
 			</activeconfig>
 		</blocks>
 		<models>
 			<activeconfig>
-				<class>TrueAction_ActiveConfig_Model</class>
+				<class>EbayEnterprise_ActiveConfig_Model</class>
 			</activeconfig>
 		</models>
 		<events>
@@ -21,7 +21,7 @@
 				<observers>
 					<config_imports_observer>
 						<type>singleton</type>
-						<class>TrueAction_ActiveConfig_Model_Observer</class>
+						<class>EbayEnterprise_ActiveConfig_Model_Observer</class>
 						<method>processConfigImports</method>
 					</config_imports_observer>
 				</observers>
@@ -31,7 +31,7 @@
 	<phpunit>
 		<suite>
 			<modules>
-				<TrueAction_ActiveConfig />
+				<EbayEnterprise_ActiveConfig />
 			</modules>
 		</suite>
 	</phpunit>

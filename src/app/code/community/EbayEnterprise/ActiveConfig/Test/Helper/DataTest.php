@@ -1,5 +1,5 @@
 <?php
-class TrueAction_ActiveConfig_Test_Helper_DataTest extends EcomDev_PHPUnit_Test_Case
+class EbayEnterprise_ActiveConfig_Test_Helper_DataTest extends EcomDev_PHPUnit_Test_Case
 {
 
 	public function setUp()
@@ -23,7 +23,7 @@ class TrueAction_ActiveConfig_Test_Helper_DataTest extends EcomDev_PHPUnit_Test_
 		$model = Mage::helper('filetransfer')
 			->getProtocolModel('testsection/testgroup');
 		$this->assertInstanceOf(
-			'TrueAction_FileTransfer_Model_Protocol_Types_Sftp',
+			'EbayEnterprise_FileTransfer_Model_Protocol_Types_Sftp',
 			$model
 		);
 	}
@@ -39,7 +39,7 @@ class TrueAction_ActiveConfig_Test_Helper_DataTest extends EcomDev_PHPUnit_Test_
 		$model = Mage::helper('filetransfer')
 			->getProtocolModel('testsection/testgroup', 'sftp');
 		$this->assertInstanceOf(
-			'TrueAction_FileTransfer_Model_Protocol_Types_Sftp',
+			'EbayEnterprise_FileTransfer_Model_Protocol_Types_Sftp',
 			$model
 		);
 	}

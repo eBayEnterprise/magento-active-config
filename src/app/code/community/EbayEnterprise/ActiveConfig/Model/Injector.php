@@ -3,8 +3,8 @@
  * inserts new nodes into the configuration using a specified
  * attachement point.
  * */
-class TrueAction_ActiveConfig_Model_Injector
-	implements TrueAction_ActiveConfig_Model_Injector_Interface
+class EbayEnterprise_ActiveConfig_Model_Injector
+	implements EbayEnterprise_ActiveConfig_Model_Injector_Interface
 {
 	// group node the injector is attached to.
 	private $_groupNode = null;

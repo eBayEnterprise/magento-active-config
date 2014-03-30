@@ -1,5 +1,5 @@
 <?php
-class TrueAction_ActiveConfig_Test_Model_InjectorTest extends EcomDev_PHPUnit_Test_Case
+class EbayEnterprise_ActiveConfig_Test_Model_InjectorTest extends EcomDev_PHPUnit_Test_Case
 {
 	public static $cls;
 	public static $grpNode;
@@ -7,7 +7,7 @@ class TrueAction_ActiveConfig_Test_Model_InjectorTest extends EcomDev_PHPUnit_Te
 	public static function setUpBeforeClass()
 	{
 		self::$cls = new ReflectionClass(
-			'TrueAction_ActiveConfig_Model_Injector'
+			'EbayEnterprise_ActiveConfig_Model_Injector'
 		);
 		self::$grpNode = self::$cls->getProperty('_groupNode');
 		self::$grpNode->setAccessible(true);

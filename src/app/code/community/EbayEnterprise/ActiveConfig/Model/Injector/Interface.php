@@ -4,7 +4,7 @@
  * interface for classes that insert new nodes into the adminhtml system
  * configuration using a specified attachment point.
  */
-interface TrueAction_ActiveConfig_Model_Injector_Interface {
+interface EbayEnterprise_ActiveConfig_Model_Injector_Interface {
 
 	/**
 	 * insert the xml nodes that comprise a set of configuration fields

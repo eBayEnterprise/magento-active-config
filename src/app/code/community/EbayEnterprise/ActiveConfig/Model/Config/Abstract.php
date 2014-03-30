@@ -1,11 +1,11 @@
 <?php
 /**
- * TrueAction_ActiveConfig_Model_Config_Abstract
+ * EbayEnterprise_ActiveConfig_Model_Config_Abstract
  *
  * @method string getConfigPath()
  * @method self setConfigPath(string $configPath)
  */
-abstract class TrueAction_ActiveConfig_Model_Config_Abstract extends Mage_Core_Model_Abstract
+abstract class EbayEnterprise_ActiveConfig_Model_Config_Abstract extends Mage_Core_Model_Abstract
 {
 	/**
 	 * @var Varien_Simplexml_Element
