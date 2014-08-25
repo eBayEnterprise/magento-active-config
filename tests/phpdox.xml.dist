@@ -19,7 +19,7 @@
   <!-- syntax: <require file="/path/to/file.php" /> -->
   <bootstrap/>
   <!-- A phpDox project to process, you can have multiple projects in one config file -->
-  <project name="Magento FileTransfer Extension" source="${basedir}/src" workdir="${basedir}/build/phpdox/xml">
+  <project name="Magento ActiveConfig Extension" source="${basedir}/src" workdir="${basedir}/build/phpdox/xml">
     <!--  @name    - The name of the project -->
     <!--  @source  - The source directory of the application to process -->
     <!--  @workdir - The directory to store the xml data files in -->

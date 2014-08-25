@@ -1,0 +1,40 @@
+{
+	"name": "ebayenterprise/magento-with-active-config",
+	"description": "Platform for injecting configuration fields into the configuration of a third module.",
+	"license": "OSL-3.0",
+	"type": "project",
+	"require": {
+		"ebayenterprise/magento-active-config": "master-dev",
+		"ecomdev/ecomdev_phpunit": "~0.3",
+		"pdepend/pdepend": "~1.1",
+		"phpdocumentor/phpdocumentor":"~2.4",
+		"phploc/phploc": "~2.0",
+		"phpmd/phpmd": "~1.5",
+		"phpunit/dbunit": "~1",
+		"phpunit/php-invoker": "~1.1",
+		"phpunit/phpunit-selenium": "~1",
+		"phpunit/phpunit-story": "~1",
+		"sebastian/phpcpd": "~2.0",
+		"squizlabs/php_codesniffer": "~1.5"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://packages.firegento.com"
+		},
+		{
+			"type": "vcs",
+			"url": "/home/stack/git/EcomDev_PHPUnit.git"
+		},
+		{
+			"type": "vcs",
+			"url": "/home/stack/git/magento-active-config.git"
+		}
+	],
+	"extra": {
+		"magento-deploystrategy": "copy",
+		"magento-root-dir": "build/magento"
+	}
+}
