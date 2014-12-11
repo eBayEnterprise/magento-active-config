@@ -37,9 +37,6 @@
 	"type": "magento-module",
 	"minimum-stability": "dev",
 	"prefer-stable": true,
-	"require": {
-		"magento-hackathon/magento-composer-installer": "~2"
-	},
 	"require-dev": {
 		"ecomdev/ecomdev_phpunit": "~0.3",
 		"pdepend/pdepend": "~1.1",
@@ -54,7 +51,6 @@
 		"squizlabs/php_codesniffer": "~1.5"
 	},
 	"extra": {
-		"magento-root-dir": "build/magento",
 		"branch-alias": {
 			"dev-master": "1.0.x-dev"
 		}
