@@ -84,6 +84,12 @@ phpcpd:
         - .:/srv/magento
     entrypoint: /srv/magento/build/magento/vendor/bin/phpcpd
     command: --fuzzy --progress src
+phpcbf:
+    image: kojiromike/magento_tools
+    volumes:
+        - .:/srv/magento
+    entrypoint: /srv/magento/build/magento/vendor/bin/phpcbf
+    command: --standard=PSR2 --no-patch src
 phpcs:
     image: kojiromike/magento_tools
     volumes:

@@ -1,25 +1,25 @@
 <?php
 /**
  * Copyright (c) 2013-2014 eBay Enterprise, Inc.
- * 
+ *
  * NOTICE OF LICENSE
- * 
+ *
  * This source file is subject to the Open Software License (OSL 3.0)
  * that is bundled with this package in the file LICENSE.md.
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/osl-3.0.php
- * 
+ *
  * @copyright   Copyright (c) 2013-2014 eBay Enterprise, Inc. (http://www.ebayenterprise.com/)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
 class EbayEnterprise_ActiveConfig_Test_Model_ObserverTest extends EcomDev_PHPUnit_Test_Case
 {
-	private $observer = null;
-	public function setUp()
-	{
-		$config = Mage::getModel('core/config');
-		$config->loadString('
+    private $observer = null;
+    public function setUp()
+    {
+        $config = Mage::getModel('core/config');
+        $config->loadString('
 <config>
 	<sections>
 		<testsection>
@@ -64,24 +64,23 @@ class EbayEnterprise_ActiveConfig_Test_Model_ObserverTest extends EcomDev_PHPUni
 			</groups>
 		</testsection>
 	</sections>
-</config>'
-		);
+</config>');
 
-		$event = $this->getMock('Varien_Event', array('getConfig'));
-		$event->expects($this->any())
-			->method('getConfig')
-			->will($this->returnValue($config));
+        $event = $this->getMock('Varien_Event', array('getConfig'));
+        $event->expects($this->any())
+            ->method('getConfig')
+            ->will($this->returnValue($config));
 
-		$this->observer = $this->getMock('Varien_Object', array('getEvent'));
-		$this->observer->expects($this->any())
-			->method('getEvent')
-			->will($this->returnValue($event));
-	}
+        $this->observer = $this->getMock('Varien_Object', array('getEvent'));
+        $this->observer->expects($this->any())
+            ->method('getEvent')
+            ->will($this->returnValue($event));
+    }
 
-	public function testProcessConfigImportsGeneratesEvents()
-	{
-		$model = Mage::getSingleton('activeconfig/observer');
-		$model->processConfigImports($this->observer);
-		$this->assertEventDispatched('activeconfig_testmodule');
-	}
+    public function testProcessConfigImportsGeneratesEvents()
+    {
+        $model = Mage::getSingleton('activeconfig/observer');
+        $model->processConfigImports($this->observer);
+        $this->assertEventDispatched('activeconfig_testmodule');
+    }
 }
