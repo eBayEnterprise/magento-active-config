@@ -1,11 +1,10 @@
-[Contributing to This Project](CONTRIBUTING.md)
+[![ebay logo](docs/static/logo-vert.png)](http://www.ebayenterprise.com/)
 
-ActiveConfig
-============
+# Magento Active Config Module
 
-The ActiveConfig module is a platform that allows other modules to
-dynamically inject configuration fields into the system configuration
-of a third module. The ActiveConfig module activates after Magento has loaded all of the system.xml files. It looks through the loaded config for any sections that have an import specification. It then fires an event for the module whose config is to be imported to handle.
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/eBayEnterprise/magento-active-config/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/eBayEnterprise/magento-active-config/?branch=master)
+
+The ActiveConfig module allows other modules to dynamically inject configuration fields into the system configuration of a third module. The ActiveConfig module activates after Magento has loaded all of the system.xml files. It looks through the loaded config for any sections that have an import specification. It then fires an event for the module whose config is to be imported to handle.
 
 ## Config Path
 
@@ -84,10 +83,9 @@ the import spec.
 in the above configuration, the event fired would
 be `activeconfig_import_module`. As such, modules that support importing config define an event handler for its respective event.
 
-License and Copyright
-=====================
-
-Copyright © 2014 eBay Enterprise
+## License
 
 Licensed under the terms of the Open Software License v. 3.0 (OSL-3.0). See [LICENSE.md](LICENSE.md) or http://opensource.org/licenses/OSL-3.0 for the full text of the license.
 
+- - -
+Copyright © 2014 eBay Enterprise, Inc.
