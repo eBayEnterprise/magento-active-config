@@ -25,12 +25,6 @@ class EbayEnterprise_ActiveConfig_Model_Observer
     // string
     const IMPORT_SPEC = 'activeconfig_import';
 
-    public function __construct()
-    {
-        $this->_fieldsCfg = new Varien_Simplexml_Config();
-        $this->_fieldsCfg->loadString('<fields/>');
-    }
-
     /**
      * reads an import specification.
      * @see README.md
@@ -38,7 +32,7 @@ class EbayEnterprise_ActiveConfig_Model_Observer
      * @param Varien_Simplexml_Element $groupNode
      * @param string $configPath
      */
-    private function _readImportSpec(
+    private function readImportSpec(
         Varien_Simplexml_Element $specNode,
         Varien_Simplexml_Element $groupNode,
         $configPath
@@ -46,7 +40,7 @@ class EbayEnterprise_ActiveConfig_Model_Observer
         foreach ($specNode->children() as $moduleName => $moduleNode) {
             Mage::dispatchEvent(
                 self::EVENT_PREFIX . $moduleName,
-                $this->_prepareEventData(
+                $this->prepareEventData(
                     $groupNode,
                     $moduleNode,
                     $configPath
@@ -62,20 +56,20 @@ class EbayEnterprise_ActiveConfig_Model_Observer
      * @param Varien_Simplexml_Element $moduleSpec
      * @param Varien_Simplexml_Element $groupNode
      * @param string $configPath
-     * @return Array(mixed)
+     * @return mixed[]
      */
-    private function _prepareEventData(
+    private function prepareEventData(
         Varien_Simplexml_Element $groupNode,
         Varien_Simplexml_Element $moduleSpec,
         $configPath
     ) {
         $injector = Mage::getModel('activeconfig/injector');
         $injector->setAttachmentPoint($groupNode);
-        return array(
+        return [
             'injector'    => $injector,
             'module_spec' => $moduleSpec,
             'config_path' => $configPath,
-        );
+        ];
     }
 
     /**
@@ -84,12 +78,12 @@ class EbayEnterprise_ActiveConfig_Model_Observer
      * @param Varien_Simplexml_Element
      * @param string $configPath
      */
-    private function _processFor(Varien_Simplexml_Element $group, $configPath)
+    private function processFor(Varien_Simplexml_Element $group, $configPath)
     {
         $fieldNodes = $group->fields->children();
         foreach ($fieldNodes as $fieldName => $fieldNode) {
             if ($fieldName === self::IMPORT_SPEC) {
-                $this->_readImportSpec($fieldNode, $group, $configPath);
+                $this->readImportSpec($fieldNode, $group, $configPath);
             }
         }
     }
@@ -110,7 +104,7 @@ class EbayEnterprise_ActiveConfig_Model_Observer
                 // NOTE: must specifically check for false or else this may break
                 if (false !== $group->descend(self::IMPORT_SPEC_PATH)) {
                     $configPath = $sectionName . '/' . $groupName;
-                    $this->_processFor($group, $configPath);
+                    $this->processFor($group, $configPath);
                 }
             }
         }
