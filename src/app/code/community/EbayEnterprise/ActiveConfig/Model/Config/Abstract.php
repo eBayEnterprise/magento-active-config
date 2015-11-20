@@ -30,8 +30,7 @@ abstract class EbayEnterprise_ActiveConfig_Model_Config_Abstract extends Mage_Co
      * Generate the xml nodes that comprise a set of
      * configuration fields in the magento system config.
      * @param $importOptions
-     * @return
-     * @todo Complete this docblock.
+     * @return Varien_Simplexml_Config
      */
     abstract public function generateFields($importOptions);
 
@@ -39,8 +38,7 @@ abstract class EbayEnterprise_ActiveConfig_Model_Config_Abstract extends Mage_Co
      * Load data to be accessed by magic setter/getters.
      * @param $configName
      * @param $magicName
-     * @return
-     * @todo Complete this docblock.
+     * @return void
      */
     protected function _loadFieldAsMagic($configName, $magicName)
     {
