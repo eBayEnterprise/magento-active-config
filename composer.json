@@ -10,6 +10,9 @@
         { "name": "Reginald Gabriel", "email": "rgabriel@ebay.com" },
         { "name": "Scott van Brug", "email": "svanbrug@ebay.com" }
     ],
+    "require": {
+        "php": "^5.4.0"
+    },
     "require-dev": {
         "ecomdev/ecomdev_phpunit": ">=0.3",
         "pdepend/pdepend": ">=1.1",

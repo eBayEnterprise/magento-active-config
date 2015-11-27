@@ -17,12 +17,14 @@ class EbayEnterprise_ActiveConfig_Test_Model_InjectorTest extends EcomDev_PHPUni
 {
     public static $cls;
     public static $grpNode;
+    /** @var Varien_Simplexml_Config */
+    protected $cfg;
+    /** @var Varien_Simplexml_Config */
+    protected $field;
 
     public static function setUpBeforeClass()
     {
-        self::$cls = new ReflectionClass(
-            'EbayEnterprise_ActiveConfig_Model_Injector'
-        );
+        self::$cls = new ReflectionClass('EbayEnterprise_ActiveConfig_Model_Injector');
         self::$grpNode = self::$cls->getProperty('_groupNode');
         self::$grpNode->setAccessible(true);
     }

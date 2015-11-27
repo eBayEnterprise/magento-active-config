@@ -13,25 +13,24 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-
-/*
- * interface for classes that insert new nodes into the adminhtml system
+/**
+ * Interface for classes that insert new nodes into the adminhtml system
  * configuration using a specified attachment point.
  */
 interface EbayEnterprise_ActiveConfig_Model_Injector_Interface
 {
+    /**
+     * Insert the xml nodes that comprise a set of configuration fields
+     * into the Magento system config.
+     *
+     * @param Varien_Simplexml_Config
+     */
+    public function insertConfig(Varien_Simplexml_Config $config);
 
     /**
-     * insert the xml nodes that comprise a set of configuration fields
-     * into the magento system config.
-     * @param Varien_Simplexml_Config $config
-     * */
-    public function insertConfig($config);
-
-
-    /**
-     * specify the attachment point.
-     * @param Varien_Simplexml_Element $attachmentPoint
-     * */
-    public function setAttachmentPoint($attachmentPoint);
+     * Specify the attachment point.
+     *
+     * @param Varien_Simplexml_Element
+     */
+    public function setAttachmentPoint(Varien_Simplexml_Element $attachmentPoint);
 }

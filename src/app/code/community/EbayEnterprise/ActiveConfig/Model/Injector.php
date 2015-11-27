@@ -19,37 +19,41 @@
  * */
 class EbayEnterprise_ActiveConfig_Model_Injector implements EbayEnterprise_ActiveConfig_Model_Injector_Interface
 {
-    // group node the injector is attached to.
-    private $_groupNode = null;
+    /** @var Varien_Simplexml_Element group node the injector is attached to */
+    protected $groupNode;
 
     /**
-     * create the injector and optionally set a group node as the attachment
-     * point.
-     * @param Varien_Simplexml_Element $groupNode
-     * */
-    public function __construct($groupNode = null)
+     * Create the injector and optionally set a group node as the attachment point.
+     *
+     * @param Varien_Simplexml_Element|null
+     */
+    public function __construct(Varien_Simplexml_Element $groupNode = null)
     {
-        $this->_groupNode = $groupNode;
-    }
-
-    /**
-     * insert the xml nodes that comprise a set of configuration fields
-     * into the attached group in the magento system config.
-     * @param Varien_Simplexml_Config $fieldsConfig
-     * */
-    public function insertConfig($fieldsConfig)
-    {
-        if (!is_null($this->_groupNode)) {
-            $this->_groupNode->fields->extend($fieldsConfig->getNode());
+        if ($groupNode) {
+            $this->setAttachmentPoint($groupNode);
         }
     }
 
     /**
-     * specify the group node to attach to.
-     * @param Varien_Simplexml_Element
-     * */
-    public function setAttachmentPoint($groupNode)
+     * Insert the xml nodes that comprise a set of configuration fields
+     * into the attached group in the Magento system config.
+     *
+     * @param Varien_Simplexml_Config $fieldsConfig
+     */
+    public function insertConfig(Varien_Simplexml_Config $fieldsConfig)
     {
-        $this->_groupNode = $groupNode;
+        if ($this->groupNode) {
+            $this->groupNode->fields->extend($fieldsConfig->getNode());
+        }
+    }
+
+    /**
+     * Specify the group node to attach to.
+     *
+     * @param Varien_Simplexml_Element
+     */
+    public function setAttachmentPoint(Varien_Simplexml_Element $groupNode)
+    {
+        $this->groupNode = $groupNode;
     }
 }
